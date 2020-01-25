@@ -6,11 +6,11 @@ pipeline {
                 echo 'Hi, this is Zulaikha from edureka'
             }
         }
-	    stage('Two'){	    
+	stage('Two'){	    
             steps {
                 input('Do you want to proceed?')
             }
-	    }
+	}
         stage('Three') {
             when {
                 not {
@@ -18,7 +18,7 @@ pipeline {
                 }
             }
             steps {
-			    echo "Hello"
+		    echo "Hello"
             }
         }
         stage('Four') {
@@ -32,9 +32,9 @@ pipeline {
                     agent {
                         docker {
                             reuseNode false
-					        image 'ubuntu'
+			    image 'ubuntu'
                         }
-			        }
+		    }
                     steps {
                         echo 'Running the integration test..'
                     }
